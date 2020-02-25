@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <BorderPane>
+            <center>
+                <TextField fx:id="taskPriority" promptText="Priority"/>
+            </center>
+         <top>
+            <TextField fx:id="taskDescription" promptText="Description" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+                <Button onAction="#add" text="Add" BorderPane.alignment="CENTER" />
+         </right>
+         <left>
+            <TextField fx:id="taskName" promptText = "Name" BorderPane.alignment="CENTER" />
+         </left>
+        </BorderPane>
+    </top>
+    <center>
+        <TableView fx:id="taskTable">
+            <columns>
+                <TableColumn text="Id.">
+                     <cellValueFactory>
+                         <PropertyValueFactory property="nr" />
+                     </cellValueFactory>
+                </TableColumn>
+                <TableColumn text="Name.">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="name" />
+                    </cellValueFactory>
+                </TableColumn>
+                 <TableColumn text="Description.">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="description" />
+                    </cellValueFactory>
+                </TableColumn>
+                        <TableColumn text="Priority">
+                <cellValueFactory>
+                    <PropertyValueFactory property="priority" />
+                </cellValueFactory>
+            </TableColumn>
+                    </columns>
+        </TableView>
+    </center>
+</BorderPane>
